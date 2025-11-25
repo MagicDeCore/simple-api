@@ -22,7 +22,7 @@ public class UserService {
   }
 
   public List<UserDto> getAllUsers() {
-    return userRepository.findAllByAgeExists().stream()
+    return userRepository.findAll().stream()
         .map(u -> new UserDto(u.getId(), u.getName(), u.getAge()))
         .collect(Collectors.toList());
   }
